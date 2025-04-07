@@ -15,16 +15,8 @@ class VerifyCsrfToken extends Middleware
      * @var \array\
      */
     
+    // A alteração aqui, não estava funcionando, então foi feita a alteração no vendor (não recomendado)
     protected $except = [
         '/contatop'
     ];
-
-    public function handle($request, \Closure $next)
-    {
-        //verificando se o middleware está sendo utilizado
-        //para isso, tentar acessar qualquer página no laravel
-        // dd("Middleware verify personalizado");
-        \Log::info('>> Passei pelo VerifyCsrfToken personalizado');
-        return parent::handle($request, $next);
-     }
 }
