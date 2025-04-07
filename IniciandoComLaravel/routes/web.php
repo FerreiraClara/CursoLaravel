@@ -11,8 +11,16 @@ Route::get('/contato', function() {
     return "Página de Contato!";
 });
 
-Route::post('/contatop', function() {
-    return "Página Post";
+Route::post('/contato', function() {
+    return "Página Post!";
+});
+
+Route::put('/contato', function() {
+    return "Página Put!";
+});
+
+Route::delete('/contato', function() {
+    return "Página Delete!";
 });
 
 

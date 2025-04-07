@@ -17,6 +17,6 @@ class VerifyCsrfToken extends Middleware
     
     // A alteração aqui, não estava funcionando, então foi feita a alteração no vendor (não recomendado)
     protected $except = [
-        '/contatop'
+        '/contato'
     ];
 }
