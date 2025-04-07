@@ -23,5 +23,9 @@ Route::delete('/contato', function() {
     return "Página Delete!";
 });
 
+Route::match(['get', 'post'], 'sobre', function() {
+    return "Trabalhando com match";
+});
+
 
 // Route::post('contatop', [SessionController::class, 'store']) -> name('contato.store');

@@ -12,9 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         // Não é necessário, visto que foi alterado no vendor
-        $middleware->append([
-            \App\Http\Middleware\VerifyCsrfToken::class,
-        ]);
+        // $middleware->append([
+        //     \App\Http\Middleware\VerifyCsrfToken::class,
+        // ]);
         
     })
     ->withExceptions(function (Exceptions $exceptions) {
