@@ -27,5 +27,10 @@ Route::match(['get', 'post'], 'sobre', function() {
     return "Trabalhando com match";
 });
 
+Route::any('todos', function() {
+    $url = url('nova');
+    return "Trabalhando com any " . $url;
+});
+
 
 // Route::post('contatop', [SessionController::class, 'store']) -> name('contato.store');

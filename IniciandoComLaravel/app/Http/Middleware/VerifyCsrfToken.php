@@ -15,10 +15,11 @@ class VerifyCsrfToken extends Middleware
      * @var \array\
      */
     
-     
+
     // A alteração aqui, não estava funcionando, então foi feita a alteração no vendor (não recomendado)
     protected $except = [
         '/contato',
         '/sobre',
+        '/todos',
     ];
 }
