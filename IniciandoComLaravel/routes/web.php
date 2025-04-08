@@ -40,5 +40,13 @@ Route::get('/produto/{id?}/{cor?}', function($id=null, $cor='Não definido') {
         . $url );
 });
 
+Route::get('teste', ['as' => 'detalhes', function() {
+    return 'Pagina Teste';
+}]);
+
+Route::get('link', ['as' => 'link', function() {
+    return 'Link <a href="'. route('detalhes') .'">Detalhe</a>';
+}]);
+
 
 // Route::post('contatop', [SessionController::class, 'store']) -> name('contato.store');
