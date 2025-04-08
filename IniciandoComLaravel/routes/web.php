@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\AlunosController;
+use App\Http\Controllers\TurmaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -72,3 +73,5 @@ Route::group(['prefix' => 'admin'], function() {
 
 
 Route::get('aluno', [AlunosController::class, 'index']);
+
+Route::get('turma/lista', [TurmaController::class, 'index'])->name('livro.index');

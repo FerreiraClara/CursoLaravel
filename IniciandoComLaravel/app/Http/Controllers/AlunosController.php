@@ -13,7 +13,7 @@ class AlunosController extends Controller
      */
     public function index()
     {
-        return "Index de Aluno";
+        return "Index de Aluno" . '<a href="'. route('livro.index') .'">Livro</a>';
     }
 
     /**
