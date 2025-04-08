@@ -8,6 +8,8 @@ class TurmaController extends Controller
 {
     public function index()
     {
-        return 'Index Livro';
+        $turma = ["nome"=>'ensino médio'];
+
+        return view('home', $turma);
     }
 }

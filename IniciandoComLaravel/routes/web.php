@@ -75,10 +75,18 @@ Route::group(['prefix' => 'admin'], function() {
 
 Route::get('aluno', [AlunosController::class, 'index']);
 
+// name é o apelido
 Route::get('turma/lista', [TurmaController::class, 'index'])->name('livro.index');
 
 Route::controller(ProfessorController::class)->group(function () {
     Route::get('professor', 'getIndex');
     Route::get('professor', 'getLista');
     Route::post('professor', 'postLista');
+});
+
+
+Route::get('/home', [TurmaController::class, 'index']);
+
+Route::get('/cadastroAluno', function() {
+    return view('cadastro.cadastroAluno');
 });
