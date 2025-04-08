@@ -32,8 +32,12 @@ Route::any('todos', function() {
     return "Trabalhando com any " . $url;
 });
 
-Route::get('/produto/{id?}/cor={cor?}', function($id=null, $cor='Não definido') {
-    return "Produto $id => cor = $cor";
+Route::get('/produto/{id?}/{cor?}', function($id=null, $cor='Não definido') {
+    $url = url('/produto/{id?}/cor={cor?}');
+    return (
+        "Produto $id <br>
+        cor = $cor <br><br>"
+        . $url );
 });
 
 
