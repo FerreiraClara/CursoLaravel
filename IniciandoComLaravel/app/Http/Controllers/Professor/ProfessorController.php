@@ -9,5 +9,18 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
-    //
+    public function getIndex()
+    {
+        return "Index de Professor";
+    }
+
+    public function getLista()
+    {
+        return "Lista de Professor";
+    }
+
+    public function postLista()
+    {
+        return "POST: Lista de Professor";
+    }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\TurmaController;
+use App\Http\Controllers\Professor\ProfessorController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -75,3 +76,9 @@ Route::group(['prefix' => 'admin'], function() {
 Route::get('aluno', [AlunosController::class, 'index']);
 
 Route::get('turma/lista', [TurmaController::class, 'index'])->name('livro.index');
+
+Route::controller(ProfessorController::class)->group(function () {
+    Route::get('professor', 'getIndex');
+    Route::get('professor', 'getLista');
+    Route::post('professor', 'postLista');
+});
