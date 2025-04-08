@@ -40,6 +40,7 @@ Route::get('/produto/{id?}/{cor?}', function($id=null, $cor='Não definido') {
         . $url );
 });
 
+// rotas apelidadas
 Route::get('teste', ['as' => 'detalhes', function() {
     return 'Pagina Teste';
 }]);
@@ -47,6 +48,22 @@ Route::get('teste', ['as' => 'detalhes', function() {
 Route::get('link', ['as' => 'link', function() {
     return 'Link <a href="'. route('detalhes') .'">Detalhe</a>';
 }]);
+
+
+// grupo de rotas
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/contato', function() {
+        return "Página de Admin Contato!";
+    });
+
+    Route::get('/sobre', function() {
+        return "Página de Admin Sobre!";
+    });
+
+    Route::get('/configuracoes', function() {
+        return "Página de Admin Configurações!";
+    });
+});
 
 
 // Route::post('contatop', [SessionController::class, 'store']) -> name('contato.store');
