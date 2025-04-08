@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\AlunosController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -67,3 +68,7 @@ Route::group(['prefix' => 'admin'], function() {
 
 
 // Route::post('contatop', [SessionController::class, 'store']) -> name('contato.store');
+
+
+
+Route::get('aluno', [AlunosController::class, 'index']);
