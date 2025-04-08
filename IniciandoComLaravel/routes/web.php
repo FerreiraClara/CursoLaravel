@@ -32,5 +32,9 @@ Route::any('todos', function() {
     return "Trabalhando com any " . $url;
 });
 
+Route::get('/artigo/{id}', function($id) {
+    return "Página de Artigo $id!";
+});
+
 
 // Route::post('contatop', [SessionController::class, 'store']) -> name('contato.store');
