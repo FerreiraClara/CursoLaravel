@@ -14,9 +14,24 @@ class ProfessorController extends Controller
         return view('cadastro.cadastroProfessor');
     }
 
-    public function getLista()
+    public function showAll()
     {
-        return "Lista de Professor";
+        $professores = array(
+            ['nome' => 'Gustavo'],
+            ['nome' => 'Maria'],
+            ['nome' => 'Paula'],
+            ['nome' => 'Breno'],
+            ['nome' => 'Miguel'],
+        );
+
+        $arrayVazio = [];
+
+        return view('cadastro.cadastroProfessor', compact('usuarios', 'arrayVazio'));
+    }
+
+    public function show(string $id)
+    {
+        //
     }
 
     public function postLista()

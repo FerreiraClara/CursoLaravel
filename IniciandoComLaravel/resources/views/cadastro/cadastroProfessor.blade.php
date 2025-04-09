@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>View Cadastro Turma</h1>
+    <h1>View Cadastro Professor</h1>
+    
 </body>
 </html>
