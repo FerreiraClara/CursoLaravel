@@ -90,3 +90,7 @@ Route::group(['prefix' => 'cadastro'], function() {
     Route::get('professor', [ProfessorController::class, 'index']);
     Route::get('turma', [TurmaController::class, 'index']);
 });
+
+Route::get('verindex', function() {
+    return view('layout.index');
+});
