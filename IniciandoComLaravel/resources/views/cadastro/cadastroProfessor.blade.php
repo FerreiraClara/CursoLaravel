@@ -22,10 +22,15 @@
 
 
     <h1>Listagem professores</h1>
+    
     @if(2 == 1)
         <p>É igual</p>
     @elseif(2 > 1)
         <p>É maior</p>
     @endif
+
+    @for($i=0; $i<3; $i++)
+        Contando com o for {{$i}} <br>
+    @endfor
 
 @endsection
