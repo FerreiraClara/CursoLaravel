@@ -47,5 +47,11 @@
             <p>Sem Registros</p>
     @endforelse
 
+    <?php $i = 0; ?>
+
+    @while($i <= 4)
+        <p> While {{$i++}}</p>
+    @endwhile
+    
 
 @endsection
