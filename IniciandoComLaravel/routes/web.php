@@ -69,12 +69,6 @@ Route::group(['prefix' => 'admin'], function() {
 });
 
 
-// Route::post('contatop', [SessionController::class, 'store']) -> name('contato.store');
-
-
-
-Route::get('aluno', [AlunosController::class, 'index']);
-
 // name é o apelido
 Route::get('turma/lista', [TurmaController::class, 'index'])->name('livro.index');
 
@@ -83,6 +77,7 @@ Route::controller(ProfessorController::class)->group(function () {
     Route::get('professor', 'getLista');
     Route::post('professor', 'postLista');
 });
+
 
 
 Route::group(['prefix' => 'cadastro'], function() {
