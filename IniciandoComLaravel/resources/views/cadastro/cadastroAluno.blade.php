@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cadastroAluno.css">
-    <title>Document</title>
-</head>
-<body>
-<div class="container">
+@extends('layout.index')
+@section('conteudo')
+  <div class="container">
     <h2>Cadastro de Aluno</h2>
     <form action="/aluno/cadastrar" method="POST" enctype="multipart/form-data">
       <label for="nome">Nome do Aluno</label>
@@ -37,5 +30,4 @@
       <button type="submit">Cadastrar</button>
     </form>
   </div>
-</body>
-</html>
+@endsection
