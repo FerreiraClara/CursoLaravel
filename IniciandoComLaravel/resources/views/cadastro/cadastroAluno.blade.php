@@ -1,5 +1,6 @@
 @extends('layout.index')
 @section('navbar')
+  @parent
   <p>nova navbar</p>
 @endsection
 @section('conteudo')
