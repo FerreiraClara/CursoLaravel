@@ -1,4 +1,7 @@
 @extends('layout.index')
+@section('navbar')
+  <p>nova navbar</p>
+@endsection
 @section('conteudo')
   <div class="container">
     <h2>Cadastro de Aluno</h2>
