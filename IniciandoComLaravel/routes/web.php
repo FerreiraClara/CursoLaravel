@@ -83,6 +83,7 @@ Route::controller(ProfessorController::class)->group(function () {
 Route::group(['prefix' => 'cadastro'], function() {
     Route::get('aluno', [AlunosController::class, 'index']);
     Route::get('professor', [ProfessorController::class, 'index']);
+    Route::get('professor/showAll', [ProfessorController::class, 'showAll']);
     Route::get('turma', [TurmaController::class, 'index']);
 });
 

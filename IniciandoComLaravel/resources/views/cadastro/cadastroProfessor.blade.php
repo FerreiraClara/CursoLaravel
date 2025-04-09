@@ -20,8 +20,6 @@
     </form>
   </div>
 
-
-    <h1>Listagem professores</h1>
     
     @if(2 == 1)
         <p>É igual</p>
@@ -32,5 +30,15 @@
     @for($i=0; $i<3; $i++)
         Contando com o for {{$i}} <br>
     @endfor
+
+
+    <h1>Listagem professores</h1>
+    
+    @foreach($professores as $professor)
+        <ul>
+            <li>{{ $professor['nome'] }}</li>
+        </ul>
+    @endforeach
+
 
 @endsection

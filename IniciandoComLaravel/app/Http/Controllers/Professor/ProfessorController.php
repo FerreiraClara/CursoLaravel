@@ -26,7 +26,7 @@ class ProfessorController extends Controller
 
         $arrayVazio = [];
 
-        return view('cadastro.cadastroProfessor', compact('usuarios', 'arrayVazio'));
+        return view('cadastro.cadastroProfessor', compact('professores', 'arrayVazio'));
     }
 
     public function show(string $id)
