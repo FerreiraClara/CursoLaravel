@@ -8,7 +8,7 @@ class TurmaController extends Controller
 {
     public function index()
     {
-        $turma = ["nome"=>'ensino médio'];
+        $turma = ["nome"=>'ensino médio', 'turno'=>'manha'];
 
         return view('home', $turma);
     }

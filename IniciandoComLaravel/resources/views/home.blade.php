@@ -8,5 +8,6 @@
 <body>
     <h1>View Home</h1>
     <p>Turma: {{ $nome }}</p>
+    <p>Turno: {{ $turno }}</p>
 </body>
 </html>
