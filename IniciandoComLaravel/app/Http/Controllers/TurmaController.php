@@ -10,6 +10,6 @@ class TurmaController extends Controller
     {
         $turma = ["nome"=>'ensino médio', 'turno'=>'manha'];
 
-        return view('home', $turma);
+        return view('cadastro.cadastroTurma', $turma);
     }
 }

@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
-    public function getIndex()
+    public function Index()
     {
-        return "Index de Professor";
+        return view('cadastro.cadastroProfessor');
     }
 
     public function getLista()

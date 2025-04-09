@@ -79,14 +79,14 @@ Route::get('aluno', [AlunosController::class, 'index']);
 Route::get('turma/lista', [TurmaController::class, 'index'])->name('livro.index');
 
 Route::controller(ProfessorController::class)->group(function () {
-    Route::get('professor', 'getIndex');
+    // Route::get('professor', 'getIndex'); // a classe foi alterada para 'index'
     Route::get('professor', 'getLista');
     Route::post('professor', 'postLista');
 });
 
 
-Route::get('/home', [TurmaController::class, 'index']);
-
-Route::get('/cadastroAluno', function() {
-    return view('cadastro.cadastroAluno');
+Route::group(['prefix' => 'cadastro'], function() {
+    Route::get('aluno', [AlunosController::class, 'index']);
+    Route::get('professor', [ProfessorController::class, 'index']);
+    Route::get('turma', [TurmaController::class, 'index']);
 });
