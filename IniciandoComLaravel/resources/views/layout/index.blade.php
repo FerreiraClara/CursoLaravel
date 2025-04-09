@@ -10,15 +10,7 @@
 <body>
     <header>
         @section('navbar')
-            <nav class="navbar">
-                <div class="logo">Sistema de Presença</div>
-                <ul>
-                    <li><a href="#">Alunos</a></li>
-                    <li><a href="#">Turmas</a></li>
-                    <li><a href="#">Professores</a></li>
-                    <li><a href="#">Presenças</a></li>
-                </ul>
-            </nav>
+            @include('layout._includes._navbar')
         @show
         <!-- show permite que o sistema continue a imprimir os códigos abaixo -->
     </header>
