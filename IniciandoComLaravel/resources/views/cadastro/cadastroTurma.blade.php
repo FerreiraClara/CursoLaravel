@@ -4,6 +4,8 @@
 
 @section('conteudo')
 
+    {{ $t }}
+
    <div class="form-container">
     <h2>Cadastro de Professor</h2>
     <form action="/turmas" method="POST">
