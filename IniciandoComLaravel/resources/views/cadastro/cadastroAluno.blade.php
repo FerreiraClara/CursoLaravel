@@ -4,7 +4,7 @@
 @section('conteudo')
   <div class="container">
     <h2>Cadastro de Aluno</h2>
-    <form action="/aluno/cadastrar" method="POST" enctype="multipart/form-data">
+    <form action="/alunos" method="POST" enctype="multipart/form-data">
       <label for="nome">Nome do Aluno</label>
       <input type="text" id="nome" name="nome" required />
 

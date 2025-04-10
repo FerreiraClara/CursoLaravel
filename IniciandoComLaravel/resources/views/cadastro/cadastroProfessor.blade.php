@@ -1,7 +1,7 @@
 @extends('layout.index')
 @section('conteudo')
 
-<div class="form-container">
+   <div class="form-container">
     <h2>Cadastro de Professor</h2>
     <form action="/professores" method="POST">
       <!-- CSRF para Laravel -->
@@ -16,9 +16,9 @@
       <label for="turma">Turma Responsável:</label>
       <input type="text" id="turma" name="turma" required>
 
-      <button type="submit">Cadastrar Professor</button>
+      <button type="submit">Cadastrar</button>
     </form>
-  </div>
+   </div>
 
     
     @if(2 == 1)
