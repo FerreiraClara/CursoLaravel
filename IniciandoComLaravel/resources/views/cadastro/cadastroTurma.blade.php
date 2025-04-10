@@ -4,7 +4,8 @@
 
 @section('conteudo')
 
-    {{ $t }}
+    {{ $t }} <br/>
+    {{ $lista }}
 
    <div class="form-container">
     <h2>Cadastro de Professor</h2>

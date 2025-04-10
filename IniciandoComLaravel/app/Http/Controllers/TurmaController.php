@@ -12,6 +12,8 @@ class TurmaController extends Controller
         $turma = new Turma("9 ano");
         $t = $turma->getNome();
 
-        return view('cadastro.cadastroTurma', compact('t'));
+        $lista = Turma::listaTurmas();
+
+        return view('cadastro.cadastroTurma', compact('t', 'lista'));
     }
 }

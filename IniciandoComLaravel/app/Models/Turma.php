@@ -18,7 +18,7 @@ class Turma extends Model
         return $this->nome;
     }
 
-    public static function listaUsuarios()
+    public static function listaTurmas()
     {
         return "Lista Turmas";
     }
