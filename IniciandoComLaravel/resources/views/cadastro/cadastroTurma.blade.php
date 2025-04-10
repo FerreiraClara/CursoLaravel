@@ -8,7 +8,7 @@
     {{ $lista }}
 
    <div class="form-container">
-    <h2>Cadastro de Professor</h2>
+    <h2>Cadastro de Turma</h2>
     <form action="/turmas" method="POST">
 
       <label for="nome">Nome:</label>
