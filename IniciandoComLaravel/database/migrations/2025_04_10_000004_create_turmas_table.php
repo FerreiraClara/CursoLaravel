@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('turmas', function (Blueprint $table) {
-            $table->bigIncrements('id_turma');
-            $table->string('nome_turma', 128);
-            $table->string('diaDaSemana_turma', 128);
-            $table->foreignId('id_prof')->nullable()->constrained('professors', 'id_prof')->onDelete('cascade');
+            $table->bigIncrements('id');
+            $table->string('nome', 128);
+            $table->string('diaDaSemana', 128);
+            $table->foreignId('id_prof')->nullable()->constrained('professores', 'id')->onDelete('cascade');
             $table->timestamps();
         });
     }

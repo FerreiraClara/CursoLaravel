@@ -9,5 +9,6 @@ class Professor extends Model
 {
     use HasFactory;
  
-    protected $guardad = ['id'];
+    protected $guardad = ['id_prof'];
+    protected $table = 'professores';
 }
