@@ -13,7 +13,8 @@ class TurmaTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
         Turma::factory(5)->create();
+        
     }
 }

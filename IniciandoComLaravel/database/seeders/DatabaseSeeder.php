@@ -18,6 +18,5 @@ class DatabaseSeeder extends Seeder
         $this->call(TurmaTableSeeder::class);
         $this->call(AlunoTableSeeder::class);
 
-        // User::factory(10)->create();
     }
 }

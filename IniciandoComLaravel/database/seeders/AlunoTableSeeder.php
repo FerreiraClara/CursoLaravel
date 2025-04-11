@@ -13,8 +13,8 @@ class AlunoTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //
 
         Aluno::factory(13)->create();
+        
     }
 }

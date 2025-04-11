@@ -18,7 +18,7 @@ class ProfessorFactory extends Factory
     {
         return [
             'nome' => fake()->name(),
-            'telefone' => fake()->phoneNumber(),
+            'telefone' => fake()->phoneNumber('(##) #####-####'),
         ];
     }
 }

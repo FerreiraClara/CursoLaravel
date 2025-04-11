@@ -16,10 +16,10 @@ class ProfessorTableSeeder extends Seeder
         //
 
         // sempre cria esse professor com dado fixo
-        Professor::factory()->create([
-            'nome' => 'Priscila',
-            'telefone' => '00 00000-0000',
-        ]);
+            // Professor::factory()->create([
+            //     'nome' => 'Priscila',
+            //     'telefone' => '00 00000-0000',
+            // ]);
 
         // gera professores aleatórios - Obs: Precisa ter chamado no model o HasFactory, 
         // que, por sua vez, precisa ter o ProfessorFactory criado no arquivo de fábricas (factories)

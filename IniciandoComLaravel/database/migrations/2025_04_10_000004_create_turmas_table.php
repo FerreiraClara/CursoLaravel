@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('nome', 128);
             $table->string('diaDaSemana', 128);
-            $table->foreignId('id_prof')->nullable()->constrained('professores', 'id')->onDelete('cascade');
+            $table->foreignId('prof_responsavel')->nullable()->constrained('professores', 'id')->onDelete('cascade');
             $table->timestamps();
         });
     }
