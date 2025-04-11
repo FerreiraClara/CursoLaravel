@@ -13,11 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $this->call(ProfessorTableSeeder::class);
+        $this->call(TurmaTableSeeder::class);
+        $this->call(AlunosTableSeeder::class);
+
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Aluno::factory(5)->create();
     }
 }
