@@ -16,10 +16,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ProfessorTableSeeder::class);
         $this->call(TurmaTableSeeder::class);
-        $this->call(AlunosTableSeeder::class);
+        $this->call(AlunoTableSeeder::class);
 
         // User::factory(10)->create();
-
-        Aluno::factory(5)->create();
     }
 }

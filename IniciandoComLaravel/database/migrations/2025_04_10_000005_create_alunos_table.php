@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('documento');
             $table->string('certidao');
             $table->foreignId('id_turma')->constrained('turmas', 'id')->onDelete('cascade');
+            $table->foreignId('criado_por')->constrained('professores', 'id');
             $table->timestamps();
         });
     }
