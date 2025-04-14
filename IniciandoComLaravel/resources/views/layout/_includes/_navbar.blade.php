@@ -1,7 +1,7 @@
 @section('navbar')
 
 <nav class="navbar">
-    <div class="logo">Sistema de Presença</div>
+    <div class="logo">@yield('titulo-nav')</div>
         <ul>
             <li><a href="#">Alunos</a></li>
             <li><a href="#">Turmas</a></li>

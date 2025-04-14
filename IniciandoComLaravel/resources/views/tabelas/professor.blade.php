@@ -1,20 +1,24 @@
 @extends('layout.index')
 
+@section('titulo-nav', 'Listagem professores')
+
 @section('conteudo')
 
-    <h1>Listagem professores</h1>
-    
-    @foreach($listTest as $professor)
-        <ul>
-            <li>{{ $professor['nome'] }}</li>
-        </ul>
-    @endforeach
-
-    <!-- verificacao se o array e vazio ou nao -->
-    @forelse($arrayVazio as $array)
-        {{ $array['nome'] }}
-        @empty
-            <p>Sem Registros</p>
-    @endforelse
+    <div class='tabela'>
+        <table>
+            <tr>
+                <th> Nome </th>
+                <th> Telefone </th>
+            </tr>
+            @forelse($professores as $professor)
+                <tr>
+                    <td> {{ $professor['nome'] }} </td>
+                    <td> {{ $professor['telefone'] }} </td>
+                </tr>
+                @empty
+                <td>Sem Registros</td>
+            @endforelse
+        </table>
+    </div>
 
 @endsection

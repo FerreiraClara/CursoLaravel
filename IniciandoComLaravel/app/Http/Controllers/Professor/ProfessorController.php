@@ -17,19 +17,9 @@ class ProfessorController extends Controller
 
     public function showAll()
     {
-        $professores = array(
-            ['nome' => 'Gustavo'],
-            ['nome' => 'Maria'],
-            ['nome' => 'Paula'],
-            ['nome' => 'Breno'],
-            ['nome' => 'Miguel'],
-        );
+        $professores = Professor::all();
 
-        $listTest = Professor::all();
-
-        $arrayVazio = [];
-
-        return view('tabelas.professor', compact('listTest', 'arrayVazio'));
+        return view('tabelas.professor', compact('professores'));
     }
 
     public function show(string $id)
