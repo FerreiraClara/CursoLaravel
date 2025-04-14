@@ -16,4 +16,11 @@ class TurmaController extends Controller
 
         return view('cadastro.cadastroTurma', compact('t', 'lista'));
     }
+
+    public function showAll()
+    {
+        $turmas = Turma::with('professor')->get();
+
+        return view('tabelas.turma', compact('turmas'));
+    }
 }

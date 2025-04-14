@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Professor;
 
 class Turma extends Model
 {
@@ -27,5 +28,10 @@ class Turma extends Model
     public static function listaTurmas()
     {
         return "Lista Turmas";
+    }
+
+    public function professor()
+    {
+        return $this->belongsTo(Professor::class, 'prof_responsavel');
     }
 }
