@@ -11,6 +11,12 @@ class Turma extends Model
  
     protected $guardad = ['id'];
 
+    protected $fillable =[
+        'nome',
+        'diaDaSemana',
+        'prof_responsavel',
+    ];
+
     public $nome;
 
     public function getNome()

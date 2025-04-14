@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-// php artisan make:controller Alunos --resource
-
 class AlunosController extends Controller
 {
     /**

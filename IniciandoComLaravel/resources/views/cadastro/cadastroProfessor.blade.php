@@ -31,22 +31,6 @@
         Contando com o for {{$i}} <br>
     @endfor
 
-
-    <h1>Listagem professores</h1>
-    
-    @foreach($professores as $professor)
-        <ul>
-            <li>{{ $professor['nome'] }}</li>
-        </ul>
-    @endforeach
-
-    <!-- verificacao se o array e vazio ou nao -->
-    @forelse($arrayVazio as $array)
-        {{ $array['nome'] }}
-        @empty
-            <p>Sem Registros</p>
-    @endforelse
-
     <?php $i = 0; ?>
 
     @while($i <= 4)

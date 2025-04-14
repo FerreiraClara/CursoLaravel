@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Professor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Professor;
 
 // php artisan make:controller Professor/ProfessorController
 
@@ -24,14 +25,21 @@ class ProfessorController extends Controller
             ['nome' => 'Miguel'],
         );
 
+        $listTest = Professor::all();
+
         $arrayVazio = [];
 
-        return view('cadastro.cadastroProfessor', compact('professores', 'arrayVazio'));
+        return view('tabelas.professor', compact('listTest', 'arrayVazio'));
     }
 
     public function show(string $id)
     {
         //
+    }
+
+    public function showId($id)
+    {
+        return Professor::find($id);
     }
 
     public function postLista()

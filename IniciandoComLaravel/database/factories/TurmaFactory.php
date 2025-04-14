@@ -20,7 +20,7 @@ class TurmaFactory extends Factory
         return [
             'nome' => fake()->name(),
             'diaDaSemana' => fake()->dayOfWeek(),
-            'id_prof' => Professor::factory(),
+            'prof_responsavel' => Professor::factory(),
         ];
     }
 }

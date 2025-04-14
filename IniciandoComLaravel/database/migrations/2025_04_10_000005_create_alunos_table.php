@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nome_mae', 128);
             $table->string('documento');
             $table->string('certidao');
-            $table->foreignId('id_turma')->constrained('turmas', 'id')->onDelete('cascade');
-            $table->foreignId('criado_por')->constrained('professores', 'id');
+            $table->foreignId('id_turma')->references('id')->on('turmas')->onDelete('cascade');
+            $table->foreignId('criado_por')->references('id')->on('professores');
             $table->timestamps();
         });
     }

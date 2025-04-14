@@ -10,5 +10,11 @@ class Professor extends Model
     use HasFactory;
  
     protected $guardad = ['id_prof'];
+
+    protected $fillable = [
+        'nome',
+        'telefone',
+    ];
+
     protected $table = 'professores';
 }
