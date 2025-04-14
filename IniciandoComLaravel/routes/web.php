@@ -88,8 +88,7 @@ Route::group(['prefix' => 'cadastro'], function() {
 
 Route::group(['prefix' => 'show'], function() {
     Route::get('professor', [ProfessorController::class, 'showAll']);
-    Route::get('professor/{id}', [ProfessorController::class, 'showId']);
-    Route::get('alunos/{id}', [AlunosController::class, 'showId']);
+    Route::get('aluno', [AlunosController::class, 'showAll']);
 });
 
 Route::get('verindex', function() {

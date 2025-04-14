@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Aluno;
 
 class AlunosController extends Controller
 {
@@ -37,6 +38,13 @@ class AlunosController extends Controller
     public function show(string $id)
     {
         //
+    }
+
+    public function showAll()
+    {
+        $alunos = Aluno::with('turma', 'professor')->get();
+
+        return view('tabelas.aluno', compact('alunos'));
     }
 
     /**

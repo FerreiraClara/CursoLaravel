@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Turma;
+use App\Models\Professor;
 
 class Aluno extends Model
 {
@@ -29,5 +31,15 @@ class Aluno extends Model
     public function showId($id)
     {
         return $this::find($id);
+    }
+
+    public function turma()
+    {
+        return $this->belongsTo(Turma::class, 'id_turma');
+    }
+
+    public function professor()
+    {
+        return $this->belongsTo(Professor::class, 'criado_por');
     }
 }
