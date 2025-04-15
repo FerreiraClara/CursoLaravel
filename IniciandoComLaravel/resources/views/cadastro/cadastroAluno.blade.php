@@ -5,22 +5,17 @@
 @section('conteudo')
   <div class="container_cadastro">
     <form action="/alunos" method="POST" enctype="multipart/form-data">
-      <label for="nome">Nome do Aluno</label>
-      <input type="text" id="nome" name="nome" required />
+      <input type="text" id="nome" name="nome" placeholder="Nome do Aluno" required />
 
-      <label for="pai">Nome do Pai</label>
-      <input type="text" id="pai" name="pai" required />
+      <input type="text" id="pai" name="pai" placeholder="Pai do aluno" required />
 
-      <label for="mae">Nome da Mãe</label>
-      <input type="text" id="mae" name="mae" required />
+      <input type="text" id="mae" name="mae" placeholder="Mãe do Aluno" required />
 
-      <label for="documento">Documento</label>
-      <input type="text" id="documento" name="documento" required />
+      <input type="text" id="documento" name="documento" placeholder="Documento" required />
 
-      <label for="certidao">Certidão (imagem)</label>
+      <label for="certidao" style="font-size: 10px">Certidão (imagem)</label>
       <input type="file" id="certidao" name="certidao" accept="image/*" required />
 
-      <label for="turma">Turma</label>
       <select id="turma" name="turma" required>
         <option value="">Selecione uma turma</option>
         @foreach ($turmas as $turma)

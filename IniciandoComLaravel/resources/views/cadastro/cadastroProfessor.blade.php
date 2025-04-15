@@ -9,10 +9,8 @@
       <!-- CSRF para Laravel -->
       <!-- @csrf -->
 
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+      <input type="text" id="nome" name="nome" placeholder="Nome do Professor" required>
 
-      <label for="telefone">Telefone:</label>
       <input type="text" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
 
       <!-- <label for="turma">Turma Responsável:</label>

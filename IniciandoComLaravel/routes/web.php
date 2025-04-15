@@ -86,15 +86,15 @@ Route::controller(ProfessorController::class)->group(function () {
 
 
 Route::group(['prefix' => 'cadastro'], function() {
-    Route::get('aluno', [AlunosController::class, 'index']);
-    Route::get('professor', [ProfessorController::class, 'index']);
-    Route::get('turma', [TurmaController::class, 'index']);
+    Route::get('aluno', [AlunosController::class, 'index'])->name('cadastro.aluno');
+    Route::get('professor', [ProfessorController::class, 'index'])->name('cadastro.professor');
+    Route::get('turma', [TurmaController::class, 'index'])->name('cadastro.turma');
 });
 
 Route::group(['prefix' => 'show'], function() {
-    Route::get('professor', [ProfessorController::class, 'showAll']);
-    Route::get('aluno', [AlunosController::class, 'showAll']);
-    Route::get('turma', [TurmaController::class, 'showAll']);
+    Route::get('professor', [ProfessorController::class, 'showAll'])->name('tabela.professor');
+    Route::get('aluno', [AlunosController::class, 'showAll'])->name('tabela.aluno');
+    Route::get('turma', [TurmaController::class, 'showAll'])->name('tabela.turma');
 });
 
 Route::get('verindex', function() {
