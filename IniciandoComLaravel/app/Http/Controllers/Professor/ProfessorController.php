@@ -16,8 +16,12 @@ class ProfessorController extends Controller
         
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $dados = $request->all();
+
+        print_r($dados);
+
         return view('cadastro.cadastroProfessor');
     }
 

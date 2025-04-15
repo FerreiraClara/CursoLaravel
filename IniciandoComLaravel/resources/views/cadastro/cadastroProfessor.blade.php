@@ -5,9 +5,8 @@
 @section('conteudo')
 
    <div class="container_cadastro">
-    <form action="/professores" method="POST">
-      <!-- CSRF para Laravel -->
-      <!-- @csrf -->
+    <form action="" method="GET">
+      @csrf
 
       <input type="text" id="nome" name="nome" placeholder="Nome do Professor" required>
 
