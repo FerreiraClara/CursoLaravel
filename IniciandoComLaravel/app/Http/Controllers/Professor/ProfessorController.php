@@ -29,13 +29,15 @@ class ProfessorController extends Controller
         // $telefone = $request->query('telefone');
 
         // opção 3 (metodo POST)
-        $nome = $request->input('nome');
-        $telefone = $request->input('telefone');
-
         $dados = [
             'nome'=> $request->input('nome'),
             'telefone'=> $request->input('telefone'),
         ];
+
+        $professor = new Professor();
+        $professor->nome = $request->input('nome');
+        $professor->telefone = $request->input('telefone');
+        $professor->save();
 
         return view('cadastro.cadastroProfessor');
     }
