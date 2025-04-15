@@ -18,9 +18,16 @@ class ProfessorController extends Controller
 
     public function create(Request $request)
     {
+        
+        // opção 1
         $dados = $request->all();
 
-        print_r($dados);
+        $nome = $dados['nome'];
+        $telefone = $dados['telefone'];
+
+        // opção 2
+        $nome = $request->query('nome');
+        $telefone = $request->query('telefone');
 
         return view('cadastro.cadastroProfessor');
     }
