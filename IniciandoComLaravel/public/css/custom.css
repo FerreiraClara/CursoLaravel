@@ -196,7 +196,18 @@ button[type="submit"]:hover {
     background-color: #334155;
 }
 
+.alerta-successo {
+    background-color: #d1fae5;
+    border: 1px solid #10b981;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0rem;
+}
 
+.hidden{
+    display: none;
+}
 
 /* --------------------------------- PAGINAS INICIAIS / BOTOES ----------------------------------------*/
 

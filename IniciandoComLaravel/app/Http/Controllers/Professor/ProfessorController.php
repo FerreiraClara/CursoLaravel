@@ -16,19 +16,21 @@ class ProfessorController extends Controller
         
     }
 
-    public function create(Request $request)
+    public function create()
     {
         
-        // opção 1 (metodo GET)
-        // $dados = $request->all();
-        // $nome = $dados['nome'];
-        // $telefone = $dados['telefone'];
+        return view('cadastro.cadastroProfessor');
+    }
 
-        // opção 2 (metodo GET)
-        // $nome = $request->query('nome');
-        // $telefone = $request->query('telefone');
-
-        // opção 3 (metodo POST)
+    public function store(Request $request)
+    {
+        
+        // Validação básica (protege de dados inválidos ou campos vazios)
+        $request->validate([
+            'nome' => 'required|string|max:255',
+            'telefone' => 'required|string|max:20',
+        ]);
+        
         $dados = [
             'nome'=> $request->input('nome'),
             'telefone'=> $request->input('telefone'),
@@ -39,7 +41,7 @@ class ProfessorController extends Controller
         $professor->telefone = $request->input('telefone');
         $professor->save();
 
-        return view('cadastro.cadastroProfessor');
+        return redirect()->back()->with('success', 'Professor cadastrado com sucesso!');
     }
 
     public function showAll()

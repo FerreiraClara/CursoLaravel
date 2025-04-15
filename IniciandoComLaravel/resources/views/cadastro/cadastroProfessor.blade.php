@@ -17,6 +17,9 @@
 
       <button type="submit">Cadastrar</button>
     </form>
+    <div class="alerta alerta-successo {{ session('success') ? '' : 'hidden' }}">
+        {{ session('success') }}
+    </div>
    </div>
 
     
