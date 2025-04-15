@@ -85,10 +85,14 @@ Route::controller(ProfessorController::class)->group(function () {
 // ----------------------------------- ROTAS DO PROJETO ---------------------------
 
 
+Route::get('home', function(){
+    return view('layout.index');
+});
+
 Route::group(['prefix' => 'cadastro'], function() {
-    Route::get('aluno', [AlunosController::class, 'index'])->name('cadastro.aluno');
-    Route::get('professor', [ProfessorController::class, 'index'])->name('cadastro.professor');
-    Route::get('turma', [TurmaController::class, 'index'])->name('cadastro.turma');
+    Route::get('aluno', [AlunosController::class, 'create'])->name('cadastro.aluno');
+    Route::get('professor', [ProfessorController::class, 'create'])->name('cadastro.professor');
+    Route::get('turma', [TurmaController::class, 'create'])->name('cadastro.turma');
 });
 
 Route::group(['prefix' => 'show'], function() {
@@ -97,6 +101,6 @@ Route::group(['prefix' => 'show'], function() {
     Route::get('turma', [TurmaController::class, 'showAll'])->name('tabela.turma');
 });
 
-Route::get('verindex', function() {
-    return view('layout.index');
-});
+Route::get('aluno', [AlunosController::class, 'index'])->name('inicial.aluno');
+Route::get('turma', [TurmaController::class, 'index'])->name('inicial.turma');
+Route::get('professor', [ProfessorController::class, 'index'])->name('inicial.professor');

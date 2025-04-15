@@ -15,7 +15,7 @@
         @show
         <!-- show permite que o sistema continue a imprimir os códigos abaixo -->
     </header>
-    <main style='padding-bottom: 40px'>
+    <main style='padding-bottom: 40px; height: 100%'>
         @yield('conteudo')
     </main>
     <footer>

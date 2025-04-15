@@ -12,6 +12,12 @@ class ProfessorController extends Controller
 {
     public function Index()
     {
+        return view('paginasIniciais.professor');
+        
+    }
+
+    public function create()
+    {
         return view('cadastro.cadastroProfessor');
     }
 

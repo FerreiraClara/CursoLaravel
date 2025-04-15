@@ -13,10 +13,7 @@ class AlunosController extends Controller
      */
     public function index()
     {
-
-        $turmas = Turma::all();
-
-        return view('cadastro.cadastroAluno', compact('turmas'));
+        return view('paginasIniciais.aluno');
     }
 
     /**
@@ -24,7 +21,9 @@ class AlunosController extends Controller
      */
     public function create()
     {
-        //
+        $turmas = Turma::all();
+
+        return view('cadastro.cadastroAluno', compact('turmas'));
     }
 
     /**

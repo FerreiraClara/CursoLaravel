@@ -10,6 +10,11 @@ class TurmaController extends Controller
 {
     public function index()
     {
+        return view('paginasIniciais.turma');
+    }
+
+    public function create()
+    {
         $professores = Professor::all();
 
         return view('cadastro.cadastroTurma', compact('professores'));

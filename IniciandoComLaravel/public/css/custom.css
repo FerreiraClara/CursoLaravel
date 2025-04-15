@@ -12,6 +12,13 @@ html, body {
     flex-direction: column;
 }
   
+main{
+    padding-bottom: 40px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
 
 /* --------------------------------- NAVBAR ----------------------------------------*/
 
@@ -95,13 +102,17 @@ footer small {
 
 
 /* --------------------------------- TABELAS ----------------------------------------*/
-
+/* 
+main{
+    align-items: flex-start
+} */
 
 .tabela{
-    margin: 2% 0%;
+    margin: 2% 2%;
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 80px;
 }
 
 .tabela table{
@@ -120,16 +131,21 @@ footer small {
 
 
 
-/* --------------------------------- TABELAS ----------------------------------------*/
+/* --------------------------------- CADASTRO ----------------------------------------*/
 
+/* main{
+    align-items: center;
+} */
 
 .container_cadastro {
     max-width: 600px;
+    min-width: 500px;
     margin: 2rem auto;
     padding: 2rem;
     background-color: #f1f5f9;
     border-radius: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 }
 
 .container_cadastro h2 {
@@ -177,5 +193,47 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
+    background-color: #334155;
+}
+
+
+
+/* --------------------------------- PAGINAS INICIAIS / BOTOES ----------------------------------------*/
+
+
+.container_inicial {
+    max-width: 600px;
+    text-align: center;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.container_inicial .botoes{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.botao_cadastrar {
+    background-color: #1e293b;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.botao_cadastrar:hover {
+    background-color: #334155;
+}
+
+.botao_tabela {
+    background-color: #1e293b;
+    color: white;
+}
+
+.botao_tabela:hover {
     background-color: #334155;
 }
