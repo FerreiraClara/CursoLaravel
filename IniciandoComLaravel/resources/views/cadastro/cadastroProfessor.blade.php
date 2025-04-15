@@ -5,7 +5,7 @@
 @section('conteudo')
 
    <div class="container_cadastro">
-    <form action="" method="GET">
+    <form action="" method="POST">
       @csrf
 
       <input type="text" id="nome" name="nome" placeholder="Nome do Professor" required>

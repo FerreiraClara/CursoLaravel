@@ -91,8 +91,11 @@ Route::get('home', function(){
 
 Route::group(['prefix' => 'cadastro'], function() {
     Route::get('aluno', [AlunosController::class, 'create'])->name('cadastro.aluno');
+    Route::post('aluno', [AlunosController::class, 'create'])->name('cadastro.aluno');
     Route::get('professor', [ProfessorController::class, 'create'])->name('cadastro.professor');
+    Route::post('professor', [ProfessorController::class, 'create'])->name('cadastro.professor');
     Route::get('turma', [TurmaController::class, 'create'])->name('cadastro.turma');
+    Route::post('turma', [TurmaController::class, 'create'])->name('cadastro.turma');
 });
 
 Route::group(['prefix' => 'show'], function() {
