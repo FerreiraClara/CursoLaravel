@@ -1,8 +1,10 @@
 @extends('layout.index')
+@section('titulo', 'Cadastro Professores')
+@section('titulo-nav', 'Cadastro Professores')
+
 @section('conteudo')
 
-   <div class="form-container">
-    <h2>Cadastro de Professor</h2>
+   <div class="container_cadastro">
     <form action="/professores" method="POST">
       <!-- CSRF para Laravel -->
       <!-- @csrf -->
@@ -21,7 +23,7 @@
    </div>
 
     
-    @if(2 == 1)
+    <!-- @if(2 == 1)
         <p>É igual</p>
     @elseif(2 > 1)
         <p>É maior</p>
@@ -29,13 +31,13 @@
 
     @for($i=0; $i<3; $i++)
         Contando com o for {{$i}} <br>
-    @endfor
+    @endfor -->
 
-    <?php $i = 0; ?>
+    <!-- <?php $i = 0; ?> -->
 
-    @while($i <= 4)
+    <!-- @while($i <= 4)
         <p> While {{$i++}}</p>
     @endwhile
-    
+     -->
 
 @endsection

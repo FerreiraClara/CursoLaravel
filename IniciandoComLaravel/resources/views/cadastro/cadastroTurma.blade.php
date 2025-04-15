@@ -1,14 +1,11 @@
 @extends('layout.index')
 
 @section('titulo', 'Cadastro de Turmas')
+@section('titulo-nav', 'Cadastro de Turmas')
 
 @section('conteudo')
 
-    {{ $t }} <br/>
-    {{ $lista }}
-
-   <div class="form-container">
-    <h2>Cadastro de Turma</h2>
+   <div class="container_cadastro">
     <form action="/turmas" method="POST">
 
       <label for="nome">Nome:</label>

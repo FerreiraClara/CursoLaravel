@@ -80,9 +80,14 @@ Route::controller(ProfessorController::class)->group(function () {
 
 
 
+
+
+// ----------------------------------- ROTAS DO PROJETO ---------------------------
+
+
 Route::group(['prefix' => 'cadastro'], function() {
     Route::get('aluno', [AlunosController::class, 'index']);
-    // Route::get('professor', [ProfessorController::class, 'index']);
+    Route::get('professor', [ProfessorController::class, 'index']);
     Route::get('turma', [TurmaController::class, 'index']);
 });
 

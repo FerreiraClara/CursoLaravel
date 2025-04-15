@@ -9,12 +9,7 @@ class TurmaController extends Controller
 {
     public function index()
     {
-        $turma = new Turma("9 ano");
-        $t = $turma->getNome();
-
-        $lista = Turma::listaTurmas();
-
-        return view('cadastro.cadastroTurma', compact('t', 'lista'));
+        return view('cadastro.cadastroTurma');
     }
 
     public function showAll()

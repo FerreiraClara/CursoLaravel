@@ -1,9 +1,9 @@
 @extends('layout.index')
-@section('titulo', 'Alunos')
+@section('titulo', 'Cadastro Alunos')
+@section('titulo-nav', 'Cadastro Alunos')
 
 @section('conteudo')
-  <div class="container">
-    <h2>Cadastro de Aluno</h2>
+  <div class="container_cadastro">
     <form action="/alunos" method="POST" enctype="multipart/form-data">
       <label for="nome">Nome do Aluno</label>
       <input type="text" id="nome" name="nome" required />

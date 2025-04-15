@@ -47,8 +47,8 @@ html, body {
     color: #38bdf8; 
 }
   
-  /* Responsivo para telas menores
-  @media (max-width: 768px) {
+  /* Responsivo para telas menores */
+  /* @media (max-width: 768px) {
     .navbar {
       flex-direction: column;
       align-items: flex-start;
@@ -116,4 +116,66 @@ footer small {
 
 .tabela th{
     padding: 15px;
+}
+
+
+
+/* --------------------------------- TABELAS ----------------------------------------*/
+
+
+.container_cadastro {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f1f5f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container_cadastro h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+input[type="text"],
+input[type="file"],
+select {
+    padding: 0.6rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    background-color: white;
+    color: #1e293b;
+}
+
+input[type="file"] {
+    background-color: #f8fafc;
+}
+
+button[type="submit"] {
+    background-color: #1e293b;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #334155;
 }
