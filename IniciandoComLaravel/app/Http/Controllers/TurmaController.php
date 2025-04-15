@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Turma;
+use App\Models\Professor;
 
 class TurmaController extends Controller
 {
     public function index()
     {
-        return view('cadastro.cadastroTurma');
+        $professores = Professor::all();
+
+        return view('cadastro.cadastroTurma', compact('professores'));
     }
 
     public function showAll()

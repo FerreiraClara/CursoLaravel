@@ -3,6 +3,7 @@
 <nav class="navbar">
     <div class="logo">@yield('titulo-nav')</div>
         <ul>
+        <!-- // return "Index de Aluno" . '<a href="'. route('livro.index') .'">Livro</a>'; -->
             <li><a href="#">Alunos</a></li>
             <li><a href="#">Turmas</a></li>
             <li><a href="#">Professores</a></li>

@@ -15,8 +15,8 @@
       <label for="telefone">Telefone:</label>
       <input type="text" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
 
-      <label for="turma">Turma Responsável:</label>
-      <input type="text" id="turma" name="turma" required>
+      <!-- <label for="turma">Turma Responsável:</label>
+      <input type="text" id="turma" name="turma" required> -->
 
       <button type="submit">Cadastrar</button>
     </form>

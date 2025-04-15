@@ -23,10 +23,9 @@
       <label for="turma">Turma</label>
       <select id="turma" name="turma" required>
         <option value="">Selecione uma turma</option>
-        <option value="1">Turma 1A</option>
-        <option value="2">Turma 2B</option>
-        <option value="3">Turma 3C</option>
-        <!-- Aqui você pode gerar dinamicamente com Blade ou React depois -->
+        @foreach ($turmas as $turma)
+          <option value="{{ $turma['id'] }}">{{ $turma['nome'] }}</option>
+        @endforeach
       </select>
 
       <button type="submit">Cadastrar</button>

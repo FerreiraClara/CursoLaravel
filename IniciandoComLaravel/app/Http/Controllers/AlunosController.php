@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Aluno;
+use App\Models\Turma;
 
 class AlunosController extends Controller
 {
@@ -12,8 +13,10 @@ class AlunosController extends Controller
      */
     public function index()
     {
-        // return "Index de Aluno" . '<a href="'. route('livro.index') .'">Livro</a>';
-        return view('cadastro.cadastroAluno');
+
+        $turmas = Turma::all();
+
+        return view('cadastro.cadastroAluno', compact('turmas'));
     }
 
     /**

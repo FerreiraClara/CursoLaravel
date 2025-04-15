@@ -8,8 +8,7 @@
    <div class="container_cadastro">
     <form action="/turmas" method="POST">
 
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+      <input type="text" id="nome" name="nome" placeholder="Nome completo do aluno" required>
 
       <select id="diaSemana" name="diaSemana" required>
         <option value="">Selecione um dia da semana</option>
@@ -23,10 +22,10 @@
 
       <select id="professorResponsavel" name="professorResponsavel" required>
         <option value="">Selecione uma professor responsável</option>
-        <option value="1">Turma 1A</option>
-        <option value="1">Turma 1A</option>
-        <option value="1">Turma 1A</option>
-        <option value="1">Turma 1A</option>
+        @foreach ($professores as $professor)
+          <option value="{{$professor['id']}}">{{$professor['nome']}}</option>
+        @endforeach
+
       </select>
 
       <button type="submit">Cadastrar</button>
