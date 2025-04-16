@@ -131,7 +131,7 @@ main{
 
 
 
-/* --------------------------------- CADASTRO ----------------------------------------*/
+/* --------------------------------- FORMULÁRIOS ----------------------------------------*/
 
 /* main{
     align-items: center;
@@ -167,6 +167,7 @@ label {
 
 input[type="text"],
 input[type="file"],
+input[type="password"],
 select {
     padding: 0.6rem;
     border: 1px solid #cbd5e1;

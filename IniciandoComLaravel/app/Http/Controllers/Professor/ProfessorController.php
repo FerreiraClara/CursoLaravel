@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Professor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Professor;
+use Illuminate\Support\Facades\Hash;
 
 // php artisan make:controller Professor/ProfessorController
 
@@ -19,7 +20,7 @@ class ProfessorController extends Controller
     public function create()
     {
         
-        return view('cadastro.cadastroProfessor');
+        return view('formularios.cadastroProfessor');
     }
 
     public function store(Request $request)
@@ -28,20 +29,35 @@ class ProfessorController extends Controller
         // Validação básica (protege de dados inválidos ou campos vazios)
         $request->validate([
             'nome' => 'required|string|max:128',
+            'email' => 'required|string',
             'telefone' => 'required|string|max:20',
+            'senha' => 'required|string|max:128',
+            'confirmaSenha' => 'required|string|max:128',
+            'nivelAcesso' => 'required|int|max:128',
         ]);
         
-        $dados = [
-            'nome'=> $request->input('nome'),
-            'telefone'=> $request->input('telefone'),
-        ];
 
         $professor = new Professor();
         $professor->nome = $request->input('nome');
+        $professor->email = $request->input('email');
         $professor->telefone = $request->input('telefone');
-        $professor->save();
+        $professor->nivelAcesso = $request->input('nivelAcesso');
 
-        return redirect()->back()->with('success', 'Professor cadastrado com sucesso!');
+        // dd($request->all());
+
+        if ($request->input('senha') == $request->input('confirmaSenha')){
+            $professor->senha = Hash::make($request->input('senha'));
+            $professor->save();
+
+            return redirect()->back()->with('success', 'Professor cadastrado com sucesso!');
+        
+        } else{
+            return redirect()->back()->with('success','As senhas são diferentes');
+            
+        }
+        
+
+        
     }
 
     public function showAll()

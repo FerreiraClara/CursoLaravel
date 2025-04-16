@@ -6,9 +6,9 @@ use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\Professor\ProfessorController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/contato', function() {
     return "Página de Contato!";
@@ -84,6 +84,9 @@ Route::controller(ProfessorController::class)->group(function () {
 
 // ----------------------------------- ROTAS DO PROJETO ---------------------------
 
+Route::get('/', function(){
+    return view('formularios.login');
+});
 
 Route::get('home', function(){
     return view('layout.index');

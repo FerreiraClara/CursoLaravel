@@ -17,7 +17,7 @@ class TurmaController extends Controller
     {
         $professores = Professor::all();
 
-        return view('cadastro.cadastroTurma', compact('professores'));
+        return view('formularios.cadastroTurma', compact('professores'));
     }
 
     public function store(Request $request)

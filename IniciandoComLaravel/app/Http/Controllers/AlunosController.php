@@ -23,7 +23,7 @@ class AlunosController extends Controller
     {
         $turmas = Turma::all();
 
-        return view('cadastro.cadastroAluno', compact('turmas'));
+        return view('formularios.cadastroAluno', compact('turmas'));
     }
 
     /**

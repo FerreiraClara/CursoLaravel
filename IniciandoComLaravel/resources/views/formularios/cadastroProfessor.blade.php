@@ -2,6 +2,8 @@
 @section('titulo', 'Cadastro Professores')
 @section('titulo-nav', 'Cadastro Professores')
 
+@section('navbar-opcoes')
+
 @section('conteudo')
 
    <div class="container_cadastro">
@@ -9,9 +11,14 @@
       @csrf
 
       <input type="text" id="nome" name="nome" placeholder="Nome do Professor" required>
-
+      <input type="text" id="email" name="email" placeholder="Email" required>
       <input type="text" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
-
+      <input type="text" id="senha" name="senha" placeholder="Senha" required>
+      <input type="text" id="confirmaSenha" name="confirmaSenha" placeholder="Confirma senha" required>
+        <select name="nivelAcesso" id="nivelAcesso" placeholder="Nível de acesso">
+            <option value="1">1 - Básico</option>
+            <option value="2">2 - Médio</option>
+        </select>
       <!-- <label for="turma">Turma Responsável:</label>
       <input type="text" id="turma" name="turma" required> -->
 
