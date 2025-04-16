@@ -18,13 +18,6 @@ class Turma extends Model
         'prof_responsavel',
     ];
 
-    public $nome;
-
-    public function getNome()
-    {
-        return $this->nome;
-    }
-
     public static function listaTurmas()
     {
         return "Lista Turmas";

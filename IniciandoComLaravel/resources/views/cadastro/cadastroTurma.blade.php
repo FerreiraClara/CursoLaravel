@@ -6,9 +6,10 @@
 @section('conteudo')
 
    <div class="container_cadastro">
-    <form action="/turmas" method="POST">
+    <form action="" method="POST">
+    @csrf
 
-      <input type="text" id="nome" name="nome" placeholder="Nome completo do aluno" required>
+      <input type="text" id="nome" name="nome" placeholder="Nome da turma" required>
 
       <select id="diaSemana" name="diaSemana" required>
         <option value="">Selecione um dia da semana</option>
@@ -30,6 +31,9 @@
 
       <button type="submit">Cadastrar</button>
     </form>
+    <div class="alerta alerta-successo {{ session('success') ? '' : 'hidden' }}">
+        {{ session('success') }}
+    </div>
    </div>
 
 @endsection

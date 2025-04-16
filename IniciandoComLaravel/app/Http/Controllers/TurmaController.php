@@ -20,6 +20,29 @@ class TurmaController extends Controller
         return view('cadastro.cadastroTurma', compact('professores'));
     }
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nome' => 'required|string|max:128',
+            'diaSemana' => 'required|string|max:128',
+            'professorResponsavel' => 'required|string|max:128',
+
+        ]);
+
+
+        $turma = new Turma();
+        $turma->nome = $request->input('nome');
+        $turma->diaDaSemana = $request->input('diaSemana');
+        $turma->prof_responsavel = $request->input('professorResponsavel');
+
+        // dd($request->all());
+
+        $turma->save();
+
+
+        return redirect()->back()->with('success', 'Turma cadastrada com sucesso!');
+    }
+
     public function showAll()
     {
         $turmas = Turma::with('professor')->get();
