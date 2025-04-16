@@ -68,9 +68,16 @@ class AlunosController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
+
+    public function presenca()
+    {
+
+        $alunos = Aluno::all();
+
+        return view('tabelas.presenca', compact('alunos'));
+    }
+
+
     public function show(string $id)
     {
         //

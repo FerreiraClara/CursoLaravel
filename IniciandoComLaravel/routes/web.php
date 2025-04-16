@@ -109,3 +109,8 @@ Route::group(['prefix' => 'show'], function() {
 Route::get('aluno', [AlunosController::class, 'index'])->name('inicial.aluno');
 Route::get('turma', [TurmaController::class, 'index'])->name('inicial.turma');
 Route::get('professor', [ProfessorController::class, 'index'])->name('inicial.professor');
+
+Route::get('presenca', [AlunosController::class, 'presenca'])->name('presenca');
+Route::get('chamada', function() {
+    return view('paginasIniciais.chamada');
+})->name('inicial.chamada');

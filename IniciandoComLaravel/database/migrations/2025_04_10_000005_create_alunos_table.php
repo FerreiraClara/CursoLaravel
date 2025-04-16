@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome', 128);
             $table->string('nome_pai', 128);
             $table->string('nome_mae', 128);
-            $table->string('documento');
+            $table->string('documento')->unique();
             $table->string('certidao');
             $table->foreignId('id_turma')->references('id')->on('turmas')->onDelete('cascade');
             $table->foreignId('criado_por')->references('id')->on('professores');
