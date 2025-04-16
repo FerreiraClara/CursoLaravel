@@ -15,11 +15,11 @@
 
             <input type="password" id="senha" name="senha" placeholder="Senha" required>
 
-            <!-- <label for="turma">Turma Responsável:</label>
-            <input type="text" id="turma" name="turma" required> -->
-
             <button type="submit">Entrar</button>
         </form>
+        <div class="alerta alerta-successo {{ session('success') ? '' : 'hidden' }}">
+            {{ session('success') }}
+        </div>
    </div>
 
 @endsection

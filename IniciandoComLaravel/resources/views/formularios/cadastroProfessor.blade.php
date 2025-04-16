@@ -16,6 +16,7 @@
       <input type="text" id="senha" name="senha" placeholder="Senha" required>
       <input type="text" id="confirmaSenha" name="confirmaSenha" placeholder="Confirma senha" required>
         <select name="nivelAcesso" id="nivelAcesso" placeholder="Nível de acesso">
+            <option value="">Selecione o Nível de Acesso</option>
             <option value="1">1 - Básico</option>
             <option value="2">2 - Médio</option>
         </select>

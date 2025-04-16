@@ -84,13 +84,12 @@ Route::controller(ProfessorController::class)->group(function () {
 
 // ----------------------------------- ROTAS DO PROJETO ---------------------------
 
-Route::get('/', function(){
-    return view('formularios.login');
-});
+Route::get('/', [ProfessorController::class, 'formLogar']);
+Route::post('/', [ProfessorController::class, 'logar']);
 
 Route::get('home', function(){
-    return view('layout.index');
-});
+    return view('paginasIniciais.home');
+})->name('home');
 
 Route::group(['prefix' => 'cadastro'], function() {
     Route::get('aluno', [AlunosController::class, 'create'])->name('cadastro.aluno');

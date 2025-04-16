@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Professor;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 // php artisan make:controller Professor/ProfessorController
 
@@ -56,8 +57,29 @@ class ProfessorController extends Controller
             
         }
         
+    }
 
-        
+    public function formLogar(){
+    
+        return view('formularios.login');
+    }
+
+    public function logar(Request $request){
+    
+        $request->validate([
+            'login' => 'required|string',
+            'senha' => 'required|string',
+        ]);
+
+        $professor = Professor::where('email', $request->input('login'))->first();
+
+        if($professor && Hash::check($request->input('senha'), $professor->senha)){
+            Auth::login($professor);
+
+            return redirect()->intended('/home');
+        }
+
+        return redirect()->back()->with('success','E-mail ou senha inválidos');
     }
 
     public function showAll()

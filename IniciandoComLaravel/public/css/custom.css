@@ -36,6 +36,11 @@ main{
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.navbar .logo a{
+    text-decoration: none;
+    color: white;
+}
   
 .navbar ul {
     list-style: none;
@@ -214,7 +219,6 @@ button[type="submit"]:hover {
 
 
 .container_inicial {
-    max-width: 600px;
     text-align: center;
     height: 100%;
     align-items: center;
@@ -235,6 +239,8 @@ button[type="submit"]:hover {
     font-size: 1.2rem;
     border-radius: 0.5rem;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
 }
 
 .botao_cadastrar:hover {
