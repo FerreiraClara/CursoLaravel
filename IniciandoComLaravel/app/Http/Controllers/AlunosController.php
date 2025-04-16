@@ -31,7 +31,41 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome' => 'required|string|max:128',
+            'pai' => 'required|string|max:128',
+            'mae' => 'required|string|max:128',
+            'documento' => 'required|string',
+            'certidao' => 'required|file|image',
+            'turma' => 'required',
+            // 'criado_por' => 'required',
+
+
+        ]);
+
+        $aluno = new Aluno();
+        $aluno->nome = $request->input('nome');
+        $aluno->nome_pai = $request->input('pai');
+        $aluno->nome_mae = $request->input('mae');
+        $aluno->documento = $request->input('documento');
+        $aluno->id_turma = $request->input('turma');
+        // $aluno->criado_por = auth()->user()->id;
+        $aluno->criado_por = '1';
+
+        if ($request->hasFile('certidao') && $request->file('certidao')->isValid()){
+            $arquivo = $request->file('certidao');
+            $nome_arquivo = time() . '_' . $arquivo->getClientOriginalName();
+            $caminho = $arquivo->storeAs('certidoes', $nome_arquivo, 'public');
+
+            $aluno->certidao = $caminho;
+        } else {
+            $aluno->certidao = null;
+        }
+
+        $aluno->save();
+
+        return redirect()->back()->with('success', 'Aluno cadastrado com sucesso!');
+
     }
 
     /**

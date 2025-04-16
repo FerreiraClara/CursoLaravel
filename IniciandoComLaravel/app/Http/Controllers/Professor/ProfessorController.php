@@ -27,7 +27,7 @@ class ProfessorController extends Controller
         
         // Validação básica (protege de dados inválidos ou campos vazios)
         $request->validate([
-            'nome' => 'required|string|max:255',
+            'nome' => 'required|string|max:128',
             'telefone' => 'required|string|max:20',
         ]);
         

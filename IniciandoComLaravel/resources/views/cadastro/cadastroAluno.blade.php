@@ -4,7 +4,10 @@
 
 @section('conteudo')
   <div class="container_cadastro">
-    <form action="/alunos" method="POST" enctype="multipart/form-data">
+    <!-- enctype="multipart/form-data" é por causa da certidao -->
+    <form action="" method="POST" enctype="multipart/form-data">
+      @csrf
+      
       <input type="text" id="nome" name="nome" placeholder="Nome do Aluno" required />
 
       <input type="text" id="pai" name="pai" placeholder="Pai do aluno" required />
@@ -25,5 +28,8 @@
 
       <button type="submit">Cadastrar</button>
     </form>
+    <div class="alerta alerta-successo {{ session('success') ? '' : 'hidden' }}">
+        {{ session('success') }}
+    </div>
   </div>
 @endsection

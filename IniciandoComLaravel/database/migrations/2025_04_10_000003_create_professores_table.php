@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('professores', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 128);
-            $table->string('telefone', 128);
+            $table->string('telefone', 20);
             $table->timestamps();
         });
     }
