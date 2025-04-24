@@ -3,6 +3,10 @@
 @section('titulo', 'Cadastro de Turmas')
 @section('titulo-nav', 'Cadastro de Turmas')
 
+@section('navbar')
+  @include('layout._includes._navbar')
+@show
+
 @section('conteudo')
 
    <div class="container_cadastro">

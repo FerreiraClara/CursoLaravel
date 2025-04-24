@@ -74,13 +74,14 @@ class ProfessorController extends Controller
 
         $professor = Professor::where('email', $request->input('login'))->first();
 
+
         if($professor && Hash::check($request->input('senha'), $professor->senha)){
             Auth::login($professor);
 
             return redirect()->intended('/home');
         }
 
-        return redirect()->back()->withErrors(['msg' => 'The Message']);
+        return redirect()->back()->with('error', 'Usuário e/ou senha estão incorretos');
     }
 
     public function showAll()

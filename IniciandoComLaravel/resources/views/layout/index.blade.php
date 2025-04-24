@@ -10,9 +10,7 @@
 </head>
 <body>
     <header>
-        @section('navbar')
-            @include('layout._includes._navbar')
-        @show
+        @yield('navbar')
         <!-- show permite que o sistema continue a imprimir os códigos abaixo -->
     </header>
     <main style='padding-bottom: 40px; height: 100%'>

@@ -2,7 +2,9 @@
 @section('titulo', 'Cadastro Professores')
 @section('titulo-nav', 'Cadastro Professores')
 
-@section('navbar-opcoes')
+@section('navbar')
+  @include('layout._includes._navbar')
+@show
 
 @section('conteudo')
 

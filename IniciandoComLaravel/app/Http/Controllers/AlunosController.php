@@ -67,7 +67,6 @@ class AlunosController extends Controller
             $aluno->certidao = $caminho;
         } else {
             $aluno->certidao = null;
-            return redirect()->back()->with('error', 'Certidao');
         }
 
         $aluno->save();

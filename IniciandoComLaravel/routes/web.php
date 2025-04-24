@@ -87,30 +87,38 @@ Route::controller(ProfessorController::class)->group(function () {
 Route::get('/', [ProfessorController::class, 'formLogar']);
 Route::post('/', [ProfessorController::class, 'logar']);
 
-Route::get('home', function(){
-    return view('paginasIniciais.home');
-})->name('home');
 
-Route::group(['prefix' => 'cadastro'], function() {
-    Route::get('aluno', [AlunosController::class, 'create'])->name('cadastro.aluno');
-    Route::post('aluno', [AlunosController::class, 'store'])->name('store.aluno');
-    Route::get('professor', [ProfessorController::class, 'create'])->name('cadastro.professor');
-    Route::post('professor', [ProfessorController::class, 'store'])->name('store.professor');
-    Route::get('turma', [TurmaController::class, 'create'])->name('cadastro.turma');
-    Route::post('turma', [TurmaController::class, 'store'])->name('store.turma');
+Route::middleware(['auth'])->group(function () {
+    // Rotas que exigem autenticação
+
+    Route::get('home', function(){
+        return view('paginasIniciais.home');
+    })->name('home');
+
+    Route::group(['prefix' => 'cadastro'], function() {
+        Route::get('aluno', [AlunosController::class, 'create'])->name('cadastro.aluno');
+        Route::post('aluno', [AlunosController::class, 'store'])->name('store.aluno');
+        Route::get('professor', [ProfessorController::class, 'create'])->name('cadastro.professor');
+        Route::post('professor', [ProfessorController::class, 'store'])->name('store.professor');
+        Route::get('turma', [TurmaController::class, 'create'])->name('cadastro.turma');
+        Route::post('turma', [TurmaController::class, 'store'])->name('store.turma');
+    });
+
+    Route::group(['prefix' => 'show'], function() {
+        Route::get('professor', [ProfessorController::class, 'showAll'])->name('tabela.professor');
+        Route::get('aluno', [AlunosController::class, 'showAll'])->name('tabela.aluno');
+        Route::get('turma', [TurmaController::class, 'showAll'])->name('tabela.turma');
+    });
+    
+    Route::get('aluno', [AlunosController::class, 'index'])->name('inicial.aluno');
+    Route::get('turma', [TurmaController::class, 'index'])->name('inicial.turma');
+    Route::get('professor', [ProfessorController::class, 'index'])->name('inicial.professor');
+    
+    Route::get('presenca', [AlunosController::class, 'presenca'])->name('presenca');
+    Route::get('chamada', function() {
+        return view('paginasIniciais.chamada');
+    })->name('inicial.chamada');
+
 });
 
-Route::group(['prefix' => 'show'], function() {
-    Route::get('professor', [ProfessorController::class, 'showAll'])->name('tabela.professor');
-    Route::get('aluno', [AlunosController::class, 'showAll'])->name('tabela.aluno');
-    Route::get('turma', [TurmaController::class, 'showAll'])->name('tabela.turma');
-});
 
-Route::get('aluno', [AlunosController::class, 'index'])->name('inicial.aluno');
-Route::get('turma', [TurmaController::class, 'index'])->name('inicial.turma');
-Route::get('professor', [ProfessorController::class, 'index'])->name('inicial.professor');
-
-Route::get('presenca', [AlunosController::class, 'presenca'])->name('presenca');
-Route::get('chamada', function() {
-    return view('paginasIniciais.chamada');
-})->name('inicial.chamada');

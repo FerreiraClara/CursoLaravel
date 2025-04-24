@@ -2,6 +2,10 @@
 @section('titulo', 'Cadastro Alunos')
 @section('titulo-nav', 'Cadastro Alunos')
 
+@section('navbar')
+  @include('layout._includes._navbar')
+@show
+
 @section('conteudo')
   <div class="container_cadastro">
     <!-- enctype="multipart/form-data" é por causa da certidao -->

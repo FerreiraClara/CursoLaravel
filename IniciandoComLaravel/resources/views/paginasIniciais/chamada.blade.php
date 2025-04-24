@@ -1,6 +1,10 @@
 @extends('layout.index')
 @section('titulo', 'Página Inicial - Alunos')
 
+@section('navbar')
+  @include('layout._includes._navbar')
+@show
+
 @section('conteudo')
 <div class="container_inicial">
     <div class="botoes">

@@ -2,9 +2,6 @@
 
 @section('titulo-nav', 'Login')
 
-<!-- @section('navbar-opcoes')
-@endsection -->
-
 @section('conteudo')
 
     <div class="container_cadastro">
