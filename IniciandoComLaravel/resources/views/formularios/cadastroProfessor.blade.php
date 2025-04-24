@@ -4,7 +4,7 @@
 
 @section('navbar')
   @include('layout._includes._navbar')
-@show
+@endsection
 
 @section('conteudo')
 

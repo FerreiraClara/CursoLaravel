@@ -5,6 +5,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\Professor\ProfessorController;
+use App\Http\Controllers\HomeController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -87,9 +88,17 @@ Route::controller(ProfessorController::class)->group(function () {
 Route::get('/', [ProfessorController::class, 'formLogar']);
 Route::post('/', [ProfessorController::class, 'logar']);
 
+Route::get('/welcome', function (){
+    return view('welcome');
+});
+
 
 Route::middleware(['auth'])->group(function () {
     // Rotas que exigem autenticação
+
+    Route::get('login', function(){
+        return view('paginasIniciais.home');
+    })->name('login');
 
     Route::get('home', function(){
         return view('paginasIniciais.home');

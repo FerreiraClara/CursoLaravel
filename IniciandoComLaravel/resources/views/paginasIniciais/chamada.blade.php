@@ -3,7 +3,7 @@
 
 @section('navbar')
   @include('layout._includes._navbar')
-@show
+@endsection
 
 @section('conteudo')
 <div class="container_inicial">
