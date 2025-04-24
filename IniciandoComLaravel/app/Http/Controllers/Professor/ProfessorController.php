@@ -30,11 +30,12 @@ class ProfessorController extends Controller
         // Validação básica (protege de dados inválidos ou campos vazios)
         $request->validate([
             'nome' => 'required|string|max:128',
-            'email' => 'required|string',
+            'email' => 'required|string|max:128',
             'telefone' => 'required|string|max:20',
             'senha' => 'required|string|max:128',
             'confirmaSenha' => 'required|string|max:128',
-            'nivelAcesso' => 'required|int|max:128',
+            'nivelAcesso' => 'required',
+            //nivel de Acesso é um select, não é necessário validar mais que required
         ]);
         
 
@@ -53,7 +54,7 @@ class ProfessorController extends Controller
             return redirect()->back()->with('success', 'Professor cadastrado com sucesso!');
         
         } else{
-            return redirect()->back()->with('success','As senhas são diferentes');
+            return redirect()->back()->with('error','As senhas são diferentes');
             
         }
         
@@ -79,7 +80,7 @@ class ProfessorController extends Controller
             return redirect()->intended('/home');
         }
 
-        return redirect()->back()->with('success','E-mail ou senha inválidos');
+        return redirect()->back()->withErrors(['msg' => 'The Message']);
     }
 
     public function showAll()

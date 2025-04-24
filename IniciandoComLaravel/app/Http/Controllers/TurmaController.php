@@ -22,10 +22,12 @@ class TurmaController extends Controller
 
     public function store(Request $request)
     {
+        $turmas = Turma::all();
+
         $request->validate([
             'nome' => 'required|string|max:128',
-            'diaSemana' => 'required|string|max:128',
-            'professorResponsavel' => 'required|string|max:128',
+            'diaSemana' => 'required',
+            'professorResponsavel' => 'required',
 
         ]);
 
@@ -36,6 +38,12 @@ class TurmaController extends Controller
         $turma->prof_responsavel = $request->input('professorResponsavel');
 
         // dd($request->all());
+
+        foreach ($turmas as $turma) {
+            if(($turma['nome'] == $request->input('nome')) && ($turma['diaDaSemana'] == $request->input('diaSemana'))){
+                return redirect()->back()->with('error', 'Turma já cadastrada');
+            }
+        }
 
         $turma->save();
 

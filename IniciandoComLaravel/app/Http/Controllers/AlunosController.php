@@ -31,6 +31,8 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
+        $alunos = Aluno::all();
+
         $request->validate([
             'nome' => 'required|string|max:128',
             'pai' => 'required|string|max:128',
@@ -39,7 +41,6 @@ class AlunosController extends Controller
             'certidao' => 'required|file|image',
             'turma' => 'required',
             // 'criado_por' => 'required',
-
 
         ]);
 
@@ -52,6 +53,12 @@ class AlunosController extends Controller
         // $aluno->criado_por = auth()->user()->id;
         $aluno->criado_por = '1';
 
+        foreach ($alunos as $aluno) {
+            if($aluno['documento'] == $request->input('documento')){
+                return redirect()->back()->with('error', 'Aluno já cadastrado');
+            }
+        }
+
         if ($request->hasFile('certidao') && $request->file('certidao')->isValid()){
             $arquivo = $request->file('certidao');
             $nome_arquivo = time() . '_' . $arquivo->getClientOriginalName();
@@ -60,6 +67,7 @@ class AlunosController extends Controller
             $aluno->certidao = $caminho;
         } else {
             $aluno->certidao = null;
+            return redirect()->back()->with('error', 'Certidao');
         }
 
         $aluno->save();

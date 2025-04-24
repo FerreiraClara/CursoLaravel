@@ -202,13 +202,28 @@ button[type="submit"]:hover {
     background-color: #334155;
 }
 
-.alerta-successo {
+.alert-success {
     background-color: #d1fae5;
     border: 1px solid #10b981;
     color: #065f46;
     padding: 1rem;
     border-radius: 0.5rem;
     margin: 1rem 0rem;
+}
+
+.alert-danger {
+    background-color: #fad1d1;
+    border: 1px solid #b91010;
+    color: #5f0606;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0rem;
+}
+
+.alert p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .hidden{

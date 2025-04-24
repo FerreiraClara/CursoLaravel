@@ -20,6 +20,12 @@
         <div class="alerta alerta-successo {{ session('success') ? '' : 'hidden' }}">
             {{ session('success') }}
         </div>
+    
+        @if (\Session::has('error'))
+            <div class="alert alert-danger">
+            <p>{{ \Session::get('error') }}</p>
+            </div>
+        @endif
    </div>
 
 @endsection
