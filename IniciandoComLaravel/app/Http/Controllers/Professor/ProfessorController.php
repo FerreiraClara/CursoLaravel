@@ -60,30 +60,6 @@ class ProfessorController extends Controller
         
     }
 
-    public function formLogar(){
-    
-        return view('formularios.login');
-    }
-
-    public function logar(Request $request){
-    
-        $request->validate([
-            'login' => 'required|string',
-            'senha' => 'required|string',
-        ]);
-
-        $professor = Professor::where('email', $request->input('login'))->first();
-
-
-        if($professor && Hash::check($request->input('senha'), $professor->senha)){
-            Auth::login($professor);
-
-            return redirect()->intended('/home');
-        }
-
-        return redirect()->back()->with('error', 'Usuário e/ou senha estão incorretos');
-    }
-
     public function showAll()
     {
         $professores = Professor::all();

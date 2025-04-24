@@ -6,6 +6,7 @@ use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\Professor\ProfessorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AutenticacaoController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -85,8 +86,11 @@ Route::controller(ProfessorController::class)->group(function () {
 
 // ----------------------------------- ROTAS DO PROJETO ---------------------------
 
-Route::get('/', [ProfessorController::class, 'formLogar']);
-Route::post('/', [ProfessorController::class, 'logar']);
+Route::get('/', [AutenticacaoController::class, 'login'])->name('login');
+Route::post('/', [AutenticacaoController::class, 'logar'])->name('autenticacao.logar');
+Route::get('/logout', [AutenticacaoController::class, 'logout'])->middleware('auth');
+
+Route::resource('/resource', AutenticacaoController::class);
 
 Route::get('/welcome', function (){
     return view('welcome');
@@ -95,10 +99,6 @@ Route::get('/welcome', function (){
 
 Route::middleware(['auth'])->group(function () {
     // Rotas que exigem autenticação
-
-    Route::get('login', function(){
-        return view('paginasIniciais.home');
-    })->name('login');
 
     Route::get('home', function(){
         return view('paginasIniciais.home');
