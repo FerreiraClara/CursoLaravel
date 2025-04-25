@@ -51,7 +51,7 @@ class ProfessorController extends Controller
             $professor->senha = Hash::make($request->input('senha'));
             $professor->save();
 
-            return redirect()->back()->with('success', 'Professor cadastrado com sucesso!');
+            return redirect('show/professor')->with('success', 'Professor cadastrado com sucesso!');
         
         } else{
             return redirect()->back()->with('error','As senhas são diferentes');
