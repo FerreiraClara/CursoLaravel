@@ -8,8 +8,8 @@
 @section('conteudo')
 <div class="container_inicial">
     <div class="botoes">
-        <a href="#" class="botao_cadastrar">Chamada</a>
-        <a href="#" class="botao_cadastrar botao_tabela">Relatório de Chamadas</a>
+        <a href="{{ route('chamada') }}" class="botao_cadastrar">Chamada</a>
+        <a href="{{ route('relatorios') }}" class="botao_cadastrar botao_tabela">Relatório de Chamadas</a>
         <a href="{{ route('turma') }}" class="botao_cadastrar botao_tabela">Turmas</a>
         <a href="{{ route('aluno') }}" class="botao_cadastrar botao_tabela">Alunos</a>
         <a href="{{ route('professor') }}" class="botao_cadastrar botao_tabela">Professores</a>

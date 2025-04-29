@@ -10,6 +10,10 @@ class PresencaController extends Controller
 {
     public function index(){
 
+        return view('paginasIniciais.chamada');
+    }
+
+    public function create(){
         $alunos = Aluno::all();
 
         return view('formularios.chamadas', compact('alunos'));

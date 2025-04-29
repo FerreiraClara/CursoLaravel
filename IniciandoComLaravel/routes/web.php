@@ -108,20 +108,9 @@ Route::group(['prefix' => 'cadastro'], function() {
     Route::post('turma', [TurmaController::class, 'store'])->name('store.turma');
 });
 
-
-Route::get('professor', [ProfessorController::class, 'showAll'])->name('professor');
-Route::get('aluno', [AlunosController::class, 'showAll'])->name('aluno');
-Route::get('turma', [TurmaController::class, 'showAll'])->name('turma');
-
 Route::get('chamada', function() {
     return view('paginasIniciais.chamada');
 })->name('chamada');
-
-Route::get('relatorios', [RelatoriosController::class, 'index'])->name('index.relatorios');
-Route::post('relatorios', [RelatoriosController::class, 'store'])->name('store.relatorios');
-
-Route::get('chamadas', [PresencaController::class, 'index'])->name('chamadas');
-Route::post('chamadas', [PresencaController::class, 'store'])->name('cadastro.chamada');
 
 
 
@@ -131,6 +120,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('home', function(){
         return view('home');
     })->name('home');
+
+    Route::get('professor', [ProfessorController::class, 'showAll'])->name('professor');
+    Route::get('aluno', [AlunosController::class, 'showAll'])->name('aluno');
+    Route::get('turma', [TurmaController::class, 'showAll'])->name('turma');
+
+    Route::get('relatorios', [RelatoriosController::class, 'index'])->name('relatorios');
+    Route::post('relatorios', [RelatoriosController::class, 'store'])->name('store.relatorios');
+
+    Route::get('chamada', [PresencaController::class, 'index'])->name('chamada');
+    Route::get('chamadas', [PresencaController::class, 'create'])->name('chamadas');
+    Route::post('chamadas', [PresencaController::class, 'store'])->name('cadastro.chamada');
 
     // Route::group(['prefix' => 'cadastro'], function() {
     //     Route::get('aluno', [AlunosController::class, 'create'])->name('cadastro.aluno');
