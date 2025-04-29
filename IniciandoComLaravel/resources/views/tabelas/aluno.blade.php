@@ -9,7 +9,9 @@
 @section('conteudo')
 
     <div class='container-tabela'>
-    <a href="{{ route('cadastro.aluno') }}">+ Cadastrar</a>
+        <div>
+            <a href="{{ route('cadastro.aluno') }}">+ Cadastrar</a>
+        </div>
         <div class='tabela'>
             <table>
                 <tr>

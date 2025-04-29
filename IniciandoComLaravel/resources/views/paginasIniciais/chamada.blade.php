@@ -1,6 +1,8 @@
 @extends('layout.index')
 @section('titulo', 'Página Inicial - Alunos')
 
+@section('titulo-nav', 'Chamada')
+
 @section('navbar')
   @include('layout._includes._navbar')
 @endsection

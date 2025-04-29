@@ -7,6 +7,8 @@ use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\Professor\ProfessorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AutenticacaoController;
+use App\Http\Controllers\RelatoriosController;
+use App\Http\Controllers\PresencaController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -115,13 +117,19 @@ Route::get('chamada', function() {
     return view('paginasIniciais.chamada');
 })->name('chamada');
 
+Route::get('relatorios', [RelatoriosController::class, 'index'])->name('index.relatorios');
+Route::post('relatorios', [RelatoriosController::class, 'store'])->name('store.relatorios');
+
+Route::get('chamadas', [PresencaController::class, 'index'])->name('chamadas');
+Route::post('chamadas', [PresencaController::class, 'store'])->name('cadastro.chamada');
+
 
 
 Route::middleware(['auth'])->group(function () {
     // Rotas que exigem autenticação
 
     Route::get('home', function(){
-        return view('paginasIniciais.home');
+        return view('home');
     })->name('home');
 
     // Route::group(['prefix' => 'cadastro'], function() {

@@ -30,7 +30,7 @@ class AutenticacaoController extends Controller
 
             // dd($request->all()['_token']);
 
-            return view('paginasIniciais.home', $request);
+            return view('home', $request);
             // return redirect(RouteServiceProvider::HOME);
         }
 
