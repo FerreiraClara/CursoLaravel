@@ -10,6 +10,7 @@
 
     <div class='container-tabela'>
         <div class='tabela'>
+            <h3> Professor responsável: {{ $prof_responsavel }}</h3>
             <p> Total de Aulas: {{ $total_aulas }}</p>
             <table>
                 <tr>

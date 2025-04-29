@@ -157,6 +157,10 @@ main{
     color: #fff;
 }
 
+.tabela h3{
+    padding: 10px 0px;
+}
+
 .tabela table{
     border: none;
     width: 100%;
