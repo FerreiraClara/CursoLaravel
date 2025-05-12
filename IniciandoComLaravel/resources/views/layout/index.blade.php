@@ -13,13 +13,12 @@
         @yield('navbar')
         <!-- show permite que o sistema continue a imprimir os códigos abaixo -->
     </header>
+
     <main style='padding-bottom: 40px; height: 100%'>
-        @yield('conteudo')
+            @yield('conteudo')
     </main>
     <footer>
-        @section('footer')
-            @include('layout._includes._footer')
-        @show
+        @yield('footer')
     </footer>
 </body>
 </html>

@@ -87,7 +87,7 @@ main{
 
 /* --------------------------------- FOOTER ----------------------------------------*/
 
-footer {
+.footer {
     background-color: #1e293b; 
     color: #cbd5e1; 
     text-align: center;
@@ -331,4 +331,33 @@ button[type="submit"]:hover {
     flex-direction: column;
     margin: 10px;
     width: 100%;
+}
+
+
+/* --------------------------------- PAGINAS LOGIN ----------------------------------------*/
+
+.container_login{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.form_login{
+    background-color: #18181b;
+    min-width: 500px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.form_login input[type="password"], input[type='text']{
+    width: 100%;
+    /* background-color: #18181b; */
+    /* border-color: #4e4e4e; */
+}
+
+.form_login h2{
+    color: #fff;
 }

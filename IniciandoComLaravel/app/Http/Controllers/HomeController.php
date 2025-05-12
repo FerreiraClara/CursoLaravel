@@ -9,7 +9,6 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $user = Auth::user();
         return view('paginasIniciais.home', ['user' => $user]);
     }
 }

@@ -26,14 +26,11 @@ class AutenticacaoController extends Controller
         $professor = Professor::where('email', $request->input('login'))->first();
 
         if($professor && Hash::check($request->input('senha'), $professor->senha)){
-            Auth::login($professor);
-
-            // dd($request->all()['_token']);
-
+            
             return view('home', $request);
             // return redirect(RouteServiceProvider::HOME);
+            
         }
-
         return redirect()->back()->with('error', 'Usuário e/ou senha estão incorretos');
     }
 

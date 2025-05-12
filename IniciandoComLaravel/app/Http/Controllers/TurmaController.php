@@ -10,13 +10,7 @@ class TurmaController extends Controller
 {
     public function index()
     {
-        return view('paginasIniciais.turma');
-    }
-
-    public function create()
-    {
         $professores = Professor::all();
-
         return view('formularios.cadastroTurma', compact('professores'));
     }
 
@@ -32,10 +26,10 @@ class TurmaController extends Controller
         ]);
 
 
-        $turma = new Turma();
-        $turma->nome = $request->input('nome');
-        $turma->diaDaSemana = $request->input('diaSemana');
-        $turma->prof_responsavel = $request->input('professorResponsavel');
+        $newTurma = new Turma();
+        $newTurma->nome = $request->input('nome');
+        $newTurma->diaDaSemana = $request->input('diaSemana');
+        $newTurma->prof_responsavel = $request->input('professorResponsavel');
 
         // dd($request->all());
 
@@ -45,16 +39,14 @@ class TurmaController extends Controller
             }
         }
 
-        $turma->save();
+        $newTurma->save();
 
-
-        return redirect()->back()->with('success', 'Turma cadastrada com sucesso!');
+        return redirect('api/turma/lista')->with('success', 'Turma cadastrada com sucesso!');
     }
 
-    public function showAll()
+    public function listagem()
     {
         $turmas = Turma::with('professor')->get();
-
         return view('tabelas.turma', compact('turmas'));
     }
 }

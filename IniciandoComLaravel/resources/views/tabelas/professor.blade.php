@@ -8,7 +8,7 @@
 
 @section('conteudo')
     <div class='container-tabela'>
-        <a href="{{ route('cadastro.professor') }}">+ Cadastrar</a>
+        <a href="{{ route('professor.index') }}">+ Cadastrar</a>
         <div class='tabela'>
             <table>
                 <tr>
@@ -32,3 +32,7 @@
     </div>
 
 @endsection
+
+@section('footer')
+  @include('layout._includes._footer')
+@show

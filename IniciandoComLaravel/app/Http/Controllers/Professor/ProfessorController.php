@@ -14,19 +14,11 @@ class ProfessorController extends Controller
 {
     public function Index()
     {
-        return view('paginasIniciais.professor');
-        
-    }
-
-    public function create()
-    {
-        
         return view('formularios.cadastroProfessor');
     }
 
     public function store(Request $request)
     {
-        
         // Validação básica (protege de dados inválidos ou campos vazios)
         $request->validate([
             'nome' => 'required|string|max:128',
@@ -51,34 +43,31 @@ class ProfessorController extends Controller
             $professor->senha = Hash::make($request->input('senha'));
             $professor->save();
 
-            return redirect('show/professor')->with('success', 'Professor cadastrado com sucesso!');
+            return redirect('api/professor')->with('success', 'Professor cadastrado com sucesso!');
         
         } else{
             return redirect()->back()->with('error','As senhas são diferentes');
             
         }
-        
     }
 
-    public function showAll()
-    {
+    public function listagem(){
         $professores = Professor::all();
-
         return view('tabelas.professor', compact('professores'));
     }
 
-    public function show(string $id)
-    {
-        //
-    }
-
-    public function showId($id)
+    public function show($id)
     {
         return Professor::find($id);
     }
 
-    public function postLista()
+    public function update()
     {
-        return "POST: Lista de Professor";
+        //
+    }
+
+    public function destroy()
+    {
+        //
     }
 }

@@ -9,7 +9,7 @@
 @section('conteudo')
 
     <div class='container-tabela'>
-    <a href="{{ route('cadastro.turma') }}">+ Cadastrar</a>
+    <a href="{{ route('turma.index') }}">+ Cadastrar</a>
         <div class='tabela'>
             <table>
                 <tr>
@@ -32,3 +32,7 @@
     </div>
 
 @endsection
+
+@section('footer')
+  @include('layout._includes._footer')
+@show

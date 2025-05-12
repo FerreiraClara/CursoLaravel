@@ -19,3 +19,7 @@
     </form>
 
 @endsection
+
+@section('footer')
+  @include('layout._includes._footer')
+@show
