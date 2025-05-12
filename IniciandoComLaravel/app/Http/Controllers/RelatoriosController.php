@@ -13,7 +13,6 @@ class RelatoriosController extends Controller
     public function index()
     {
         $turmas = Turma::all();
-
         return view('relatorios', compact('turmas'));
     }
 
@@ -98,46 +97,6 @@ class RelatoriosController extends Controller
 
     public function show()
     {
-    //     $alunos = Aluno::all();
-    //     $presencas = Presenca::all();
-
-    //     $lista = [];
-    //     $datas = [];
-
-    //     foreach($presencas as $presenca){
-    //         if($datas == []){
-    //             array_push($datas, $presenca->data);
-                
-    //         } elseif(!in_array($presenca->data, $datas)) {
-    //             array_push($datas, $presenca->data);
-                
-    //         }
-    //     }
-
-    //     foreach($alunos as $aluno){
-    //         $presente = 0;
-    //         $ausente = 0;
-    //         foreach($presencas as $presenca){
-    //             if($presenca->aluno == $aluno->id){
-    //                 if($presenca->presenca == 'Presente'){
-    //                     $presente += 1;
-                    
-    //                 } else{
-    //                     $ausente += 1;
-    //                 }
-    //             }
-    //         }
-
-    //         $dados = [
-    //             'nome' => $aluno->nome,
-    //             'presente' => $presente,
-    //             'ausente' => $ausente,
-    //         ];
-
-    //         array_push($lista, $dados);
-
-    //     }
-
-    //     return view('tabelas.relatorios', compact('lista', 'datas'));
+        //
     }
 }

@@ -17,30 +17,17 @@ Route::get('/logout', [AutenticacaoController::class, 'logout'])->middleware('au
 
 Route::resource('/resource', AutenticacaoController::class);
 
-Route::get('/welcome', function (){
-    return view('welcome');
-});
 
 Route::get('home', function(){
     return view('home');
 })->name('home');
 
 
-Route::get('relatorios', [RelatoriosController::class, 'index'])->name('relatorios');
-Route::post('relatorios', [RelatoriosController::class, 'store'])->name('store.relatorios');
-
-Route::get('chamada', [PresencaController::class, 'index'])->name('chamada');
-Route::get('chamadas', [PresencaController::class, 'create'])->name('chamadas');
-Route::post('chamadas', [PresencaController::class, 'store'])->name('cadastro.chamada');
-
-
-
 
 
 // ----------------------------------- ROTAS DE APRENDIZAGEM ---------------------------
 
-
-// Route::get('/', function () {
+// Route::get('/welcome', function (){
 //     return view('welcome');
 // });
 

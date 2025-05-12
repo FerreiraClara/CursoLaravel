@@ -24,3 +24,8 @@ Route::apiResource('/aluno', AlunosController::class);
 
 Route::get('/turma/lista', [TurmaController::class, 'listagem'])->name('turma.lista');
 Route::apiResource('/turma', TurmaController::class);
+
+Route::apiResource('/relatorio', RelatoriosController::class);
+
+Route::get('/presenca/inicial', [PresencaController::class, 'inicial'])->name('presenca.inicial');
+Route::apiResource('/presenca', PresencaController::class);
